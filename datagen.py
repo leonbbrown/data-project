@@ -46,7 +46,21 @@ def get_sku(rows, prod_sku):
         prod_sku.append(number)
     return prod_sku
 
+def get_name(rows,customer_name):
+    random_names = ['Timothy Lawson', 'Jackson Barnes', 'Archer Palmer', 'Francis Thomson', 'Patrick Kennedy', 'Stella Pearson']
+    for _ in range(rows):
+        name = random.choice(random_names)
+        customer_name.append(name)
+    return customer_name
 
+def get_payment_method(rows, payment):
+    payment_method = ['Credit', 'Debit', 'Paypal']
+    for _ in range(rows):
+        method = random.choice(payment_method)
+        payment.append(method)
+    return payment
+
+    
 
 def generate(rows):
     global date, customer_name, prod_sku, quantity, payment
@@ -58,5 +72,6 @@ def generate(rows):
     'Quantity': quantity,
     'Payment Method': payment
 }
+    print(dict)
 
 
