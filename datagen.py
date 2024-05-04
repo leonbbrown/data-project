@@ -9,6 +9,7 @@ quantity = []
 payment = []
 dates = []
 
+filepath = 'C:\\Users\\leon8\\OneDrive\\Desktop\\Workspace\\VS Code Projects\\web-scraper\\output.csv'
 
 while True:
     row_count = input('How many rows would you like? ')
@@ -60,18 +61,30 @@ def get_payment_method(rows, payment):
         payment.append(method)
     return payment
 
-    
+def gen():
+    gen_date(rows, dates)
+    get_quantity(rows, quantity)
+    get_sku(rows, prod_sku)
+    get_name(rows,customer_name)
+    get_payment_method(rows, payment)
 
-def generate(rows):
-    global date, customer_name, prod_sku, quantity, payment
+gen()
 
-    dict = {
-    'Date': date,
+dict = {
+    'Date': dates,
     'Customer Name': customer_name,
     'Product SKU': prod_sku,
     'Quantity': quantity,
     'Payment Method': payment
-}
-    print(dict)
+}   
+
+df = pd.DataFrame(dict)
+df.to_csv(filepath, index=False)
+print('Successfully added data to output.csv!')
+
+
+
+   
+    
 
 
