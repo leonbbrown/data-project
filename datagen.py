@@ -9,7 +9,7 @@ quantity = []
 payment = []
 dates = []
 
-filepath = 'C:\\Users\\leon8\\OneDrive\\Desktop\\Workspace\\VS Code Projects\\web-scraper\\output.csv'
+filepath = 'C:\\Users\\leon8\\OneDrive\\Desktop\\Workspace\\VS Code Projects\\data-project\\sales_data.csv'
 
 while True:
     row_count = input('How many rows would you like? ')
@@ -80,7 +80,7 @@ dict = {
 
 df = pd.DataFrame(dict)
 df.to_csv(filepath, index=False)
-print('Successfully added data to output.csv!')
+print('Successfully added data to sales_data.csv!')
 
 
 
