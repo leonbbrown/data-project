@@ -6,11 +6,11 @@ import pandas as pd
 csv_path = 'C:\\Users\\leon8\\OneDrive\\Desktop\\Workspace\\VS Code Projects\\data-project\\sales_data.csv'
 csvreader = csv.reader(csv_path)
 name = {}
-
 df = pd.read_csv(csv_path)
 customer_name_column = df['Customer Name']
 payment_method_column = df['Payment Method']
 sku_column = df['Product SKU']
+
 
 def check_order_amount():
     for i in customer_name_column:
@@ -33,9 +33,23 @@ def check_payment():
         print('PayPal')
    
 def check_sku():
+    sku_map = {
+    174832: 'jeans',
+    126594: 'T- shirt',
+    198765: 'Hoodie',
+    142307: 'Knitted Sweater',
+    195472: 'Boxer Breifs'
+        
+}
+    
     most_popular_sku = sku_column.mode().values
+    sku_list = most_popular_sku.tolist()
     print('These are the most popular products:')
-    print(most_popular_sku)
+    print(sku_list)
+    new_list = [sku_map[item] for item in sku_list]
+    print(new_list)
+    
+
     
     #print('the most popular product is:')
     #if most_popular_sku == '174832':
@@ -52,3 +66,4 @@ def check_sku():
         #print('Boxer Breifs')
 
 check_sku()
+
