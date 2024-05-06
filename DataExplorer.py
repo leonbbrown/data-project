@@ -9,6 +9,8 @@ name = {}
 
 df = pd.read_csv(csv_path)
 customer_name_column = df['Customer Name']
+payment_method_column = df['Payment Method']
+sku_column = df['Product SKU']
 
 def check_order_amount():
     for i in customer_name_column:
@@ -20,7 +22,31 @@ def check_order_amount():
     print(name)
     
 
+def check_payment():
+    most_popular_payment = payment_method_column.mode()
+    print('The payment method users prefer most is:')
+    if most_popular_payment.values == 'Debit':
+        print('Debit')
+    elif most_popular_payment.values == 'Credit':
+        print('Credit')
+    else:
+        print('PayPal')
+   
+def check_sku():
+    most_popular_sku = sku_column.mode().values
     
-    
+    print('the most popular product is:')
+    if most_popular_sku == 174832:
+        print('Jeans')
+    elif most_popular_sku == 126594:
+        print('T-shirt')
+    elif most_popular_sku == 198765:
+        print('Hoodie')
+    elif most_popular_sku == 142307:
+        print('Knitted Sweater')
+    elif most_popular_sku == 186905:
+        print('Socks')
+    else: #195472
+        print('Boxer Breifs')
 
-check_order_amount()
+check_sku()
