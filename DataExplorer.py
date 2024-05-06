@@ -38,6 +38,7 @@ def check_sku():
     126594: 'T- shirt',
     198765: 'Hoodie',
     142307: 'Knitted Sweater',
+    186905: 'Socks',
     195472: 'Boxer Breifs'
         
 }
@@ -45,9 +46,9 @@ def check_sku():
     most_popular_sku = sku_column.mode().values
     sku_list = most_popular_sku.tolist()
     print('These are the most popular products:')
-    print(sku_list)
-    new_list = [sku_map[item] for item in sku_list]
+    new_list = [sku_map[k] for k in sku_list]
     print(new_list)
+
     
 
     
