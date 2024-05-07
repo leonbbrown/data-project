@@ -67,4 +67,15 @@ def customer_purchase():
     plt.tight_layout()
     plt.show()
 
-customer_purchase()
+def show_data():
+    check_order_amount()
+    print('\n')
+    check_payment()
+    print('\n')
+    check_sku()
+    print('\n')
+    customer_purchase()
+    print('\n')
+
+
+show_data()
