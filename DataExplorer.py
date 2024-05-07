@@ -2,6 +2,7 @@
 
 import csv
 import pandas as pd
+import matplotlib.pyplot as plt
 
 csv_path = 'C:\\Users\\leon8\\OneDrive\\Desktop\\Workspace\\VS Code Projects\\data-project\\sales_data.csv'
 csvreader = csv.reader(csv_path)
@@ -50,5 +51,20 @@ def check_sku():
     print(new_list)
 
 
-check_sku()
+#orders which customer has purchased the most through to least
+def customer_purchase():
+    customer_purchases = df.groupby('Customer Name')['Quantity'].sum().reset_index()
+    customer_purchases_sorted = customer_purchases.sort_values(by='Quantity', ascending=False)
+    print(customer_purchases_sorted)
 
+    #plot data
+    plt.figure(figsize=(10, 6))
+    plt.bar(customer_purchases_sorted['Customer Name'], customer_purchases_sorted['Quantity'], color='skyblue')
+    plt.xlabel('Customer Name')
+    plt.ylabel('Quantity Purchased')
+    plt.title('Quantity of Purchases by Customer')
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
+    plt.show()
+
+customer_purchase()
