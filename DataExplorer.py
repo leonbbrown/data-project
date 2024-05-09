@@ -75,7 +75,15 @@ try:
             if df.empty:
                 print('CSV file is empty! please run Data-Generator.py')
                 return
-            print()
+            print(
+                '''
+ _____         _                 
+|   __|_ _ ___| |___ ___ ___ ___ 
+|   __|_'_| . | | . |  _| -_|  _|
+|_____|_,_|  _|_|___|_| |___|_|  
+          |_|                    
+                '''
+            )
             check_order_amount()
             print()
             check_payment()

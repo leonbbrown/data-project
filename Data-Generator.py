@@ -14,6 +14,16 @@ dates = []
 filepath = 'C:\\Users\\leon8\\OneDrive\\Desktop\\Workspace\\VS Code Projects\\data-project\\sales_data.csv'
 
 while True:
+    print(
+        '''
+                                       
+ _____                     _           
+|   __|___ ___ ___ ___ ___| |_ ___ ___ 
+|  |  | -_|   | -_|  _| .'|  _| . |  _|
+|_____|___|_|_|___|_| |__,|_| |___|_|  
+                                       
+'''
+    )
     row_count = input('How many rows would you like? ')
 
     if not row_count.isdigit():
